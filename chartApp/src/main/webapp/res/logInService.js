@@ -1,5 +1,11 @@
-var ser = angular.module("logInService",[]);
+/*var ser = angular.module("logInService",[]);*/
 
-	ser.factory("Authenticate",function($rootScope){
+	app.factory('Authenticate',function(){
 		
+		var Authenticate = {};
+			Authenticate.dologIn = function(scope){
+				alert(scope.email);
+				return scope.password;
+			}
+			return Authenticate;
 	});

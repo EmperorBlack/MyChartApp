@@ -1,7 +1,13 @@
 /*angular
 		.module("app111", ["Authenticate"])*/
-		app.controller("logInCtrl", function($scope) {
+		app.controller("logInCtrl", function($scope,Authenticate) {
 			$scope.authenticate = function(){
-				alert($scope.email);
+				$scope.body={
+					"userName" : $scope.email,
+					"password" : $scope.password
+				}
+				 Authenticate.dologIn($scope);
+				
 			}
 		});
+		
