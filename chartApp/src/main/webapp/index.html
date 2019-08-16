@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html ng-app="app">
+<head>
+    <meta charset="utf-8" />
+    <title>MychartApp</title>
+    <link rel="stylesheet" href="//netdna.bootstrapcdn.com/bootstrap/3.1.1/css/bootstrap.min.css" />
+    <script src="res/angular.js"></script>
+     <script src="https://cdnjs.cloudflare.com/ajax/libs/angular-ui-router/1.0.3/angular-ui-router.js"></script>
+           <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.97.1/css/materialize.min.css">
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.97.1/js/materialize.min.js"></script>
+       <script src="https://code.jquery.com/jquery-1.11.1.min.js"></script> 
+ 
+ </head>
+<body ng-controller="mainController" ng-init="initFile()">
+<nav class="navbar navbar-inverse">
+  <div class="container-fluid">
+    <div class="navbar-header">
+      <a class="navbar-brand" href="#">My chat app</a>
+    </div>
+    <ul class="nav navbar-nav navbar-right">
+      <li><a href="#"><span class="glyphicon glyphicon-user"></span> Sign Up</a></li>
+    </ul>
+  </div>
+</nav>
+
+            <div class="col-sm-8 col-sm-offset-2">
+            <!-- <a ui-sref="log">AngularJS User Registration and Login Example</a> -->
+                <ui-view></ui-view>
+            </div>
+  <nav class="footer navbar-fixed-bottom" style="background-color: #809fff">
+</nav>
+    <script src="res/mainApp.js"></script>
+    <script src="res/logInCtrl.js"></script>
+    <script src="res/logInService.js" ></script>
+<!--     <script>
+/*     var app = angular.module('app', []);
+    app.controller("mainController", function($scope ) {
+//    	alert($scope.message );
+//    	alert($scope.mydiv);
+    	
+//    	$scope.mydiv = 'it can access';
+    	/* $scope.initFile = function (){
+    		$state.go("home"); */
+    		$scope.fun = function()
+    		{
+    			alert($scope.msg);
+    		}
+    	}); */
+    </script> -->
+</body>
+</html>

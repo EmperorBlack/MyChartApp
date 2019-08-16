@@ -1,0 +1,35 @@
+   
+        <div id="user-login" class="container">
+            <div class="col s12 z-depth-6 card-panel">
+                <form class="login-form">
+                    <div class="row margin">
+                        <div class="input-field col s12">
+                            <i class="mdi-social-person-outline prefix"></i>
+                            <input ng-model = 'email' class="validate" id="user_email" type="email" placeholder="Email"/>
+                        </div>
+                    </div>
+                    <div class="row margin">
+                        <div class="input-field col s12">
+                            <i class="mdi-action-lock-outline prefix"></i>
+                            <input ng-model = 'message' id="user_pass" type="password" placeholder="Password"/>
+                        </div>
+                    </div>
+                    <div class="row">          
+                        <div class="input-field col s12 m12 l12  login-text">
+                            <input type="checkbox" id="remember-me" />
+                            <label for="remember-me">Remember me</label>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="input-field col s12">
+                            <button class="btn waves-effect waves-light col s12" ng-click="authenticate()">Login</button>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="input-field col s6 m6 l6">
+                            <p class="margin medium-small"><a href="register.html">Register Now!</a></p>
+                        </div>               
+                    </div>
+                </form>
+            </div>
+        </div>
