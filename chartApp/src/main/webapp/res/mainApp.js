@@ -9,12 +9,12 @@ app.config(function($stateProvider,
 		url : 'home',
 		templateUrl : "res/logIn.html",
 		controller : "logInCtrl"
-		/*})
+		})
 		
-		.state('logIn', {
-		url : '/logIn',
+		.state('ChatPage', {
+		url : '/ChatPage',
 		template : "<h1>Login success</h1>",
-		controller : "logInCtrl"*/
+		//controller : "logInCtrl"
 	});
 /*.state('Signup', {
 		url : '/signup',
@@ -33,8 +33,4 @@ app.controller("mainController",['$scope', '$http', '$state', function($scope,$h
 	$scope.initFile = function (){
 		$state.go("home");
 	}
-/*	$scope.fun = function()
-	{
-		alert($scope.msg);
-	}*/
 	}]);

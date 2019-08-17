@@ -6,7 +6,7 @@
 					"userName" : $scope.email,
 					"password" : $scope.password
 				}
-				 Authenticate.dologIn($scope);
+				 Authenticate.dologIn($scope,$scope.body);
 				
 			}
 		});
