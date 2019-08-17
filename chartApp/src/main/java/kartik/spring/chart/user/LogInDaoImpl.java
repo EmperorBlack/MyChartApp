@@ -5,10 +5,18 @@ import java.sql.DriverManager;
 import java.sql.ResultSet;
 import java.sql.Statement;
 
+import org.hibernate.Session;
 import org.springframework.stereotype.Repository;
+
+import kartik.spring.chart.hibernateConfig.HibernateConfig;
 
 @Repository
 public class LogInDaoImpl implements LogInDao{
+	
+	Session session;
+	public LogInDaoImpl() {
+		session = HibernateConfig.getSessionFactory().openSession();
+	}
 
 	public String doLogIn(UserBean user) {
 		
