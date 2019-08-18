@@ -1,5 +1,7 @@
 package kartik.spring.chart.user;
 
+import java.io.Serializable;
+
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
@@ -9,7 +11,7 @@ import javax.persistence.Table;
 
 @Entity
 @Table(name = "TBL_USER")
-public class UserJpa {
+public class UserJpa implements  Serializable {
 
 	@Id
 	@GeneratedValue(strategy = GenerationType.AUTO)

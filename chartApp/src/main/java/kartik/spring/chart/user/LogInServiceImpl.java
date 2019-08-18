@@ -12,5 +12,12 @@ public class LogInServiceImpl implements LogInService{
 		
 		return dao.doLogIn(user);
 	}
+	public String registerUser(UserBean user) {
+		boolean isUserExist =  dao.checkUserUniqueness(user.getUserName());
+			if(isUserExist)
+				return "userExist";
+			else
+				return dao.registerUser(user);
+	}
 
 }

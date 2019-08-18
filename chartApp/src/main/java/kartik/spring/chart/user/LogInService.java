@@ -4,4 +4,6 @@ public interface LogInService {
 
 	String doLogIn(UserBean user);
 
+	String registerUser(UserBean user);
+
 }

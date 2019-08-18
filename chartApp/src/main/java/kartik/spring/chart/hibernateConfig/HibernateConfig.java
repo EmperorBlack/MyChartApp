@@ -8,10 +8,12 @@ import org.hibernate.boot.registry.StandardServiceRegistryBuilder;
 import org.hibernate.cfg.Configuration;
 import org.hibernate.cfg.Environment;
 import org.hibernate.service.ServiceRegistry;
+import org.springframework.beans.factory.annotation.Value;
 
 import kartik.spring.chart.user.UserJpa;
 
 public class HibernateConfig {
+
 
 	private static SessionFactory sessionFactory;
     public static SessionFactory getSessionFactory() {
@@ -21,13 +23,13 @@ public class HibernateConfig {
                 
                 Properties settings = new Properties();
                 settings.put(Environment.DRIVER, "com.mysql.cj.jdbc.Driver");
-                settings.put(Environment.URL, "jdbc:mysql://remotemysql.com:3306/9p039dOST5?useSSL=false");//jdbc:mysql://remotemysql.com:3306/9p039dOST5","9p039dOST5","25H9Vb3xkp"
+                settings.put(Environment.URL, "jdbc:mysql://remotemysql.com:3306/9p039dOST5?useSSL=false");
                 settings.put(Environment.USER, "9p039dOST5");
                 settings.put(Environment.PASS, "25H9Vb3xkp");
                 settings.put(Environment.DIALECT, "org.hibernate.dialect.MySQL5Dialect");
                 settings.put(Environment.SHOW_SQL, "true");
                 settings.put(Environment.CURRENT_SESSION_CONTEXT_CLASS, "thread");
-                settings.put(Environment.HBM2DDL_AUTO, "create-drop");
+                settings.put(Environment.HBM2DDL_AUTO, "update");
                 configuration.setProperties(settings);
                 configuration.addAnnotatedClass(UserJpa.class);
                 ServiceRegistry serviceRegistry = new StandardServiceRegistryBuilder()
