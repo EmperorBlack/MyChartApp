@@ -12,6 +12,8 @@ import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.bind.annotation.RestController;
 
+import kartik.spring.chart.common.Response;
+
 @RestController
 @RequestMapping(value = "/user")
 public class LogInController {
@@ -19,13 +21,21 @@ public class LogInController {
 	@Autowired
 	LogInService service;
 	
+	@Autowired
+	Response response;
+	
 	@RequestMapping(value = "/login", method = RequestMethod.POST ,produces = { "application/json", "application/xml" })
 	@ResponseBody
-	public ResponseEntity<Map> userAuthenticate(@RequestBody UserBean user) {
+	public ResponseEntity<Response> userAuthenticate(@RequestBody UserBean user) {
 		System.out.println("i am in"+user.getUserName());
 		 
-		 Map<String ,String> response = new HashMap<String,String>(); 
-		 response.put("result", service.doLogIn(user));
+		// Map<String ,String> response = new HashMap<String,String>(); 
+		// response.put("result", service.doLogIn(user));
+		UserJpa LoggedInUser= service.doLogIn(user);
+		if(null != LoggedInUser)
+			response.buildResponse("success", LoggedInUser);
+		else
+			response.buildResponse("failed", LoggedInUser);	
 		 return new ResponseEntity(response,HttpStatus.OK);
 	   
 	}

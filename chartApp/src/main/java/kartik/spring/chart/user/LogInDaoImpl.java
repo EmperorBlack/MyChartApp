@@ -20,7 +20,7 @@ public class LogInDaoImpl implements LogInDao{
 		session = HibernateConfig.getSessionFactory().openSession();
 	}
 
-	public String doLogIn(UserBean user) {
+	public UserJpa doLogIn(UserBean user) {
 		
 		 Transaction transaction = null;
 	        try  {
@@ -31,16 +31,16 @@ public class LogInDaoImpl implements LogInDao{
 	            List<UserJpa> result= query.getResultList();
 	            transaction.commit();
 	            if(result != null && result.size() > 0)
-	            	return "success";
+	            	return result.get(0);
 	            else
-	            	return "failed";	           
+	            	return null;	           
 	        } catch (Exception e) {
 	            if (transaction != null) {
 	                transaction.rollback();
 	            }
 	            e.printStackTrace();
 	        }
-	        return "failed";
+	        return null;
 	}
 
 	public String registerUser(UserBean user) {

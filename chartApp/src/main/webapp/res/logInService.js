@@ -16,7 +16,7 @@
 								       	  }
 					    }).then(function mySuccess(response) {
 					    	scope.data = response.data;
-					    	if(scope.data.result == 'success')
+					    	if(scope.data.msg == 'success')
 					    			$location.path('/chartPage');
 					    	else
 					    		$location.path('/failed');

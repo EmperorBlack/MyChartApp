@@ -8,7 +8,7 @@ public class LogInServiceImpl implements LogInService{
 
 	@Autowired
 	LogInDao dao;
-	public String doLogIn(UserBean user) {
+	public UserJpa doLogIn(UserBean user) {
 		
 		return dao.doLogIn(user);
 	}
