@@ -10,9 +10,9 @@ app.config(function($stateProvider, $urlRouterProvider) {
 		controller : "logInCtrl"
 	})
 
-	.state('ChatPage', {
-		url : '/ChatPage',
-		template : "<h1>Login success</h1>",
+	.state('chartPage', {
+		url : '/chartPage',
+		templateUrl : "res/chartPage.html",
 	// controller : "logInCtrl"
 	}).state('failed', {
 		url : '/failed',

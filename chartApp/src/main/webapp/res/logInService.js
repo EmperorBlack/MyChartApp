@@ -17,7 +17,7 @@
 					    }).then(function mySuccess(response) {
 					    	scope.data = response.data;
 					    	if(scope.data.result == 'success')
-					    			$location.path('/ChatPage');
+					    			$location.path('/chartPage');
 					    	else
 					    		$location.path('/failed');
 					      },function myError(response) {
@@ -39,7 +39,7 @@
 		    }).then(function mySuccess(response) {
 		    	scope.data = response.data;
 		    	if(scope.data.result == 'success')
-		    			$location.path('/ChatPage');
+		    			$location.path('/home');
 		    	else if(scope.data.result == 'userExist'){
 		    		alert("User Exit");
 		    	}

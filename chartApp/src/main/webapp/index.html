@@ -3,12 +3,18 @@
 <head>
     <meta charset="utf-8" />
     <title>MychartApp</title>
-    <link rel="stylesheet" href="//netdna.bootstrapcdn.com/bootstrap/3.1.1/css/bootstrap.min.css" />
+    	
+		<meta name="viewport" content="width=device-width, height=device-height, viewport-fit=cover" />
+	    <link rel="stylesheet" href="//netdna.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" />
+	<link rel="stylesheet" type="text/css" href="res/css/bootstrap.min.css">
+	<link rel="stylesheet" type="text/css" href="res/css/style.css">
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.9.0/css/all.min.css">
+
     <script src="res/angular.js"></script>
      <script src="https://cdnjs.cloudflare.com/ajax/libs/angular-ui-router/1.0.3/angular-ui-router.js"></script>
            <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.97.1/css/materialize.min.css">
         <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.97.1/js/materialize.min.js"></script>
-      <script src="https://code.jquery.com/jquery-1.11.1.min.js"></script> 
+      <script src="https://code.jquery.com/jquery-1.11.1.min.js"></script>
  
  </head>
 <body ng-controller="mainController" ng-init="initFile()">
@@ -23,7 +29,7 @@
   </div>
 </nav>
 
-            <div class="col-sm-8 col-sm-offset-2">
+            <div class="col-sm-12">
             <!-- <a ui-sref="log">AngularJS User Registration and Login Example</a> -->
                 <ui-view></ui-view>
             </div>
