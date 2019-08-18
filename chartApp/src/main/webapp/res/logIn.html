@@ -5,13 +5,13 @@
                     <div class="row margin">
                         <div class="input-field col s12">
                             <i class="mdi-social-person-outline prefix"></i>
-                            <input ng-model = 'email' class="validate" id="user_email" type="email" placeholder="Email"/>
+                            <input ng-model = 'userName' class="validate" id="user_email" type="text" placeholder="Email"/>
                         </div>
                     </div>
                     <div class="row margin">
                         <div class="input-field col s12">
                             <i class="mdi-action-lock-outline prefix"></i>
-                            <input ng-model = 'message' id="user_pass" type="password" placeholder="Password"/>
+                            <input ng-model = 'password' id="user_pass" type="password" placeholder="Password"/>
                         </div>
                     </div>
                     <div class="row">          
@@ -27,7 +27,7 @@
                     </div>
                     <div class="row">
                         <div class="input-field col s6 m6 l6">
-                            <p class="margin medium-small"><a href="register.html">Register Now!</a></p>
+                            <p class="margin medium-small"><a ui-sref="signUp">Not Registered yet ?Register Now!</a></p>
                         </div>               
                     </div>
                 </form>

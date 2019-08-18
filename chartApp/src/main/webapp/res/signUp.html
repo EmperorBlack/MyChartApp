@@ -1,0 +1,32 @@
+ <div id="register-page" class="container" style="width: 80%;">
+            <div class="col s12 z-depth-6 card-panel">
+                <form class="register-form">        
+                    <div class="row margin">
+                        <div class="input-field col s12">
+                            <i class="mdi-communication-email prefix"></i>
+                            <input ng-model= 'userName' name="myInput" id="user_email" type="text" class="validate" placeholder="Email">
+                        </div>
+                    </div>
+                    <div class="row margin">
+                        <div class="input-field col s12">
+                            <i class="mdi-action-lock-outline prefix"></i>
+                            <input ng-model= 'password' id="user_passw" type="password" class="validate" placeholder="Password">
+                        </div>
+                    </div>
+                    <div class="row margin">
+                        <div class="input-field col s12">
+                            <i class="mdi-action-lock-outline prefix"></i>
+                            <input ng-model= 'confirmPass' id="confirm_pass" type="password" placeholder="Confirm Password">
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="input-field col s12">
+                            <a href="#" class="btn waves-effect waves-light col s12" ng-click="register()">Register Now</a>
+                        </div>
+                        <div class="input-field col s12">
+                            <p class="margin center medium-small sign-up">Already have an account? <a ui-sref="home">Login</a></p>
+                        </div>
+                    </div>
+                </form>
+            </div>
+        </div>

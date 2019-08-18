@@ -8,7 +8,7 @@
      <script src="https://cdnjs.cloudflare.com/ajax/libs/angular-ui-router/1.0.3/angular-ui-router.js"></script>
            <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.97.1/css/materialize.min.css">
         <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.97.1/js/materialize.min.js"></script>
-       <script src="https://code.jquery.com/jquery-1.11.1.min.js"></script> 
+      <script src="https://code.jquery.com/jquery-1.11.1.min.js"></script> 
  
  </head>
 <body ng-controller="mainController" ng-init="initFile()">
@@ -18,7 +18,7 @@
       <a class="navbar-brand" href="#">My chat app</a>
     </div>
     <ul class="nav navbar-nav navbar-right">
-      <li><a href="#"><span class="glyphicon glyphicon-user"></span> Sign Up</a></li>
+      <li><a ui-sref="signUp"><span class="glyphicon glyphicon-user"></span> Sign Up</a></li>
     </ul>
   </div>
 </nav>
@@ -31,21 +31,10 @@
 </nav>
     <script src="res/mainApp.js"></script>
     <script src="res/logInCtrl.js"></script>
+     <script src="res/signUpCtrl.js"></script>
     <script src="res/logInService.js" ></script>
-<!--     <script>
-/*     var app = angular.module('app', []);
-    app.controller("mainController", function($scope ) {
-//    	alert($scope.message );
-//    	alert($scope.mydiv);
-    	
-//    	$scope.mydiv = 'it can access';
-    	/* $scope.initFile = function (){
-    		$state.go("home"); */
-    		$scope.fun = function()
-    		{
-    			alert($scope.msg);
-    		}
-    	}); */
-    </script> -->
+     <script src="res/commonService.js" ></script>
+    
+
 </body>
 </html>
