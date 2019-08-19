@@ -10,6 +10,7 @@ import org.hibernate.cfg.Environment;
 import org.hibernate.service.ServiceRegistry;
 import org.springframework.beans.factory.annotation.Value;
 
+import kartik.spring.chart.massage.MassageJpa;
 import kartik.spring.chart.user.UserJpa;
 
 public class HibernateConfig {
@@ -32,6 +33,7 @@ public class HibernateConfig {
                 settings.put(Environment.HBM2DDL_AUTO, "update");
                 configuration.setProperties(settings);
                 configuration.addAnnotatedClass(UserJpa.class);
+                configuration.addAnnotatedClass(MassageJpa.class);
                 ServiceRegistry serviceRegistry = new StandardServiceRegistryBuilder()
                     .applySettings(configuration.getProperties()).build();
                 sessionFactory = configuration.buildSessionFactory(serviceRegistry);

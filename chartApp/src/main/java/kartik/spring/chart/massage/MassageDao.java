@@ -4,7 +4,7 @@ import java.util.List;
 
 public interface MassageDao {
 //	@Transactional(readOnly  = true)
-	public void addMessage(String message,Long senderUserId,Long reciverUserId) ;
+	public String addMessage(MassageBean msg) ;
 	
-	public List<MassageBean> getMessageas(Long senderUserId,Long reciverUserId);
+	public List<MassageJpa> getMessageas(Long senderUserId,Long reciverUserId);
 }

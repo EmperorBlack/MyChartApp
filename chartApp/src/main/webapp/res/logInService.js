@@ -3,7 +3,7 @@
 	app.factory('user',['$http','$location',function($http,$location){
 		
 		var user = {};
-		user.dologIn = function(scope ,bodyCredetial){
+		user.dologIn = function(rootscope ,bodyCredetial){
 					  $http({
 							url 		: "/chartApp/user/login",
 							dataType 	: "json",
@@ -15,8 +15,8 @@
 											"Access-Control-Allow-Credentials" 	: true
 								       	  }
 					    }).then(function mySuccess(response) {
-					    	scope.data = response.data;
-					    	if(scope.data.msg == 'success')
+					    	rootscope.data = response.data.result;
+					    	if(response.data.msg == 'success')
 					    			$location.path('/chartPage');
 					    	else
 					    		$location.path('/failed');
@@ -42,6 +42,7 @@
 		    			$location.path('/home');
 		    	else if(scope.data.result == 'userExist'){
 		    		alert("User Exit");
+		    		$location.path('/home');
 		    	}
 		    	else
 		    		$location.path('/SignUpfailed');

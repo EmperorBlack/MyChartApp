@@ -1,6 +1,7 @@
 package kartik.spring.chart.user;
 
 import java.util.HashMap;
+import java.util.List;
 import java.util.Map;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -9,6 +10,7 @@ import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
+import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.bind.annotation.RestController;
 
@@ -49,5 +51,19 @@ public class LogInController {
 		 return new ResponseEntity(response,HttpStatus.OK);
 	   
 	}
+	@RequestMapping(value = "/getUserList", method = RequestMethod.POST ,produces = { "application/json", "application/xml" })
+	@ResponseBody
+	public ResponseEntity<List<UserJpa>> getUserList(@RequestParam String userId) {
+		
+//		 Map<String ,String> response = new HashMap<String,String>(); 
+//		 response.put("result",service.registerUser());
+		List<UserJpa> user = service.getUserList(userId);
+		if(null != user && user.size() > 1)
+			response.buildResponse("success", user);
+		else
+			response.buildResponse("failed", null);	
+		 return new ResponseEntity(response,HttpStatus.OK);
+	   
+	}
 }
-//signUp
+//signUp//getUserList

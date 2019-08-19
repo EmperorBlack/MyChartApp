@@ -1,5 +1,7 @@
 package kartik.spring.chart.user;
 
+import java.util.List;
+
 public interface LogInDao {
 
 	UserJpa doLogIn(UserBean user);
@@ -7,5 +9,7 @@ public interface LogInDao {
 	String registerUser(UserBean user);
 
 	boolean checkUserUniqueness(String userName);
+
+	List<UserJpa> getUsers(String userId);
 
 }

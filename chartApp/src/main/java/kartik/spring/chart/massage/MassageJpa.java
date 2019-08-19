@@ -23,8 +23,9 @@ public class MassageJpa {
 	@Column(name = "SENDER_USER_ID")
 	private Long senderUserId;
 	@Column(name = "RECIVER_USER_ID")
-	private Long reciverUserId;
-	
+	private Long reciverUserId;	
+	@Column(name = "MSG_OWNER")
+	private Long msgOwner;
 	@Column(name = "DATE_TIME")
 	private Date dateTime;
 	
@@ -68,7 +69,12 @@ public class MassageJpa {
 	public void setDateTime(Date dateTime) {
 		this.dateTime = dateTime;
 	}
-	
-	
 
+	public Long getMsgOwner() {
+		return msgOwner;
+	}
+
+	public void setMsgOwner(Long msgOwner) {
+		this.msgOwner = msgOwner;
+	}
 }

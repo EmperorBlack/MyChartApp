@@ -1,4 +1,4 @@
-<div class="app-root">
+<div class="app-root" ng-init="onload()">
 		<div class="row table-row">
 			<div class="col-md-3 table-cell v-align app-left-side">
 				<div class="header">
@@ -6,7 +6,7 @@
 						<img src="https://image.flaticon.com/icons/svg/145/145852.svg" class="img-circle" >
 					</div>
 					<div class="name">
-						<h3>Kartik Kumar Dalai</h3>
+						<h3>{{loggedInUser}}</h3>
 					</div>
 
 				</div>
@@ -20,7 +20,12 @@
 				</div>
 
 				<div class="userlist clearfix">
-					<div class="header clearfix">
+					<div ng-repeat="x in users" class="header clearfix" ng-click = "selectedSender(x)" >
+						<div class="name">
+							<h3>{{x.userName}}</h3>
+						</div>
+					</div>
+				<!-- 	<div class="header clearfix">
 						<div class="name">
 							<h3>Swati Minz</h3>
 						</div>
@@ -44,12 +49,7 @@
 						<div class="name">
 							<h3>Swati Minz</h3>
 						</div>
-					</div>
-					<div class="header clearfix">
-						<div class="name">
-							<h3>Swati Minz</h3>
-						</div>
-					</div>
+					</div> -->
 				</div>
 			</div>
 			<div class="col-md-9 table-cell v-align main-content">
@@ -57,7 +57,7 @@
 					<nav class="app-nav navapp">
 			            <div class="container">
 			            	<div class="navbar-left">
-			            		<span class="uname" style="font-size: 22px;display: block;">Swati Minz</span>
+			            		<span class="uname" style="font-size: 22px;display: block;">{{selectedReciver}}</span>
 			            	</div>			                
 			            </div>
 			        </nav>
@@ -70,16 +70,28 @@
 		                    <div class="expert-type chat-message" id="get_chat_content">
 		                       <div class="chat">
 		                          <div class="chat-content" id="chat_history">
-		                          		
+		                          <span  ng-repeat="x in ChatData">
+		                          		<span ng-if="x.msgOwner == loggedInUserId" class="friend last">
+		                          			<span class="fabc">
+		                          				{{x.msgContent}}
+												<!-- <span class="time">{{x.dateTime}}</span> -->
+		                          			</span>
+										</span>
+										<span ng-if="x.msgOwner != loggedInUserId" class="you last">
+											<span class="yabc">
+		                          				{{x.msgContent}}
+												<!-- <span class="time">{{x.dateTime}}</span> -->
+		                          			</span>
+										</span>
+									</span>
 		                          </div>
 		                       </div>
 		                    </div>
 		                     <!--Message Box-->
 				            <div class="msg-box">
-				              <input type="text" class="ip-msg" id="ip_msg" placeholder="Type something..." />
-				              <span class="btn-group">
-				                <i class="fa fa-paper-plane" id="send_msg"></i>
-				               
+				              <input ng-model = "msgContent" type="text" class="ip-msg" id="ip_msg" placeholder="Type something..." />
+				              <span  class="btn-group">
+				                <i class="fa fa-paper-plane" ng-click="sendMsg()" id="send_msg"></i>				               
 				              </span>
 				            </div>
 		                </div>

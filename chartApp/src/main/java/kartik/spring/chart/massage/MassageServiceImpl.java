@@ -3,15 +3,20 @@ package kartik.spring.chart.massage;
 
 import java.util.List;
 
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
+
+@Service
 public class MassageServiceImpl implements MassageService {
 	
-	public MassageDao massageDao;
+	@Autowired
+	MassageDao massageDao;
 	
-	public void addChat(String message,Long senderUserId,Long reciverUserId) {
-		massageDao.addMessage(message, senderUserId, reciverUserId);
+	public String addChat(MassageBean msg) {
+		return massageDao.addMessage(msg);
 	}
 	
-	public List<MassageBean> getMessageas(Long senderUserId,Long reciverUserId){
+	public List<MassageJpa> getMessageas(Long senderUserId,Long reciverUserId){
 		return massageDao.getMessageas(senderUserId, reciverUserId);
 	}
 }

@@ -1,6 +1,6 @@
 /*angular
 		.module("app111", ["Authenticate"])*/
-		app.controller("logInCtrl", function($scope,user,commonService) {
+		app.controller("logInCtrl", function($scope,$rootScope,user,commonService) {
 			$scope.authenticate = function(){
 				commonService.ValidateEmail( $scope.userName,$scope);
 				commonService.checkPassword( $scope.password,$scope);
@@ -10,7 +10,7 @@
 							"userName" : $scope.userName,
 							"password" : $scope.password
 						}
-					user.dologIn($scope,$scope.body);
+					user.dologIn($rootScope,$scope.body);
 					}		
 			}
 		});

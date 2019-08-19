@@ -5,7 +5,7 @@ var app = angular.module('app', [ "ui.router" ]);
 app.config(function($stateProvider, $urlRouterProvider) {
 
 	$stateProvider.state('home', {
-		url : 'home',
+		url : '/home',
 		templateUrl : "res/logIn.html",
 		controller : "logInCtrl"
 	})
@@ -13,7 +13,7 @@ app.config(function($stateProvider, $urlRouterProvider) {
 	.state('chartPage', {
 		url : '/chartPage',
 		templateUrl : "res/chartPage.html",
-	// controller : "logInCtrl"
+		controller : "massageCtrl"
 	}).state('failed', {
 		url : '/failed',
 		template : "<h1>LogIn Failed </h1>",

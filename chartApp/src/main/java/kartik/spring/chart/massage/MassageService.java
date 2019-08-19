@@ -4,6 +4,6 @@ import java.util.List;
 
 public interface MassageService {
 	
-	public void addChat(String message,Long senderUserId,Long reciverUserId) ;
-	public List<MassageBean> getMessageas(Long senderUserId,Long reciverUserId);
+	public String addChat(MassageBean msg) ;
+	public List<MassageJpa> getMessageas(Long senderUserId,Long reciverUserId);
 }

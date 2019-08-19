@@ -89,4 +89,25 @@ public class LogInDaoImpl implements LogInDao{
 		        return false;
 	}
 
+	public List<UserJpa> getUsers(String userId) {
+		 Transaction transaction = null;
+	        try  {
+	            transaction = session.beginTransaction();
+	            Query query = session.createQuery("from UserJpa where userId NOT IN :userId");
+	            query.setParameter("userId", Long.parseLong(userId));
+	            List <UserJpa>result= query.getResultList();
+	            transaction.commit();
+	            if(result != null )
+	            	return result;
+	            else
+	            	return null;	           
+	        } catch (Exception e) {
+	            if (transaction != null) {
+	                transaction.rollback();
+	            }
+	            e.printStackTrace();
+	        }
+		return null;
+	}
+
 }

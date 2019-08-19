@@ -1,5 +1,7 @@
 package kartik.spring.chart.user;
 
+import java.util.List;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -18,6 +20,10 @@ public class LogInServiceImpl implements LogInService{
 				return "userExist";
 			else
 				return dao.registerUser(user);
+	}
+	public List<UserJpa> getUserList(String userId) {
+		
+		return dao.getUsers(userId);
 	}
 
 }
